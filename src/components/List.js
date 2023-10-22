@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import './list.css'
+
 import {BsTrash} from "react-icons/bs";
 import {BiEditAlt} from "react-icons/bi";
 import { baseURL } from '../utils/constant';
@@ -16,13 +18,17 @@ const List = ({id, task, setUpdateUI,  updateMode }) => {
   const handleUpdateMode = () => updateMode(id, task);
 
   return (
-    <li>
+    <li className='list-task'>
+      
+      {/* task= valeur de l'input qu'on écrit => On pass à ce props task une valeur dans APP.js*/}
       {task}
-      <div className="icone_holder">
+
+      <div className="icone-holder">
         <BiEditAlt className='icon' onClick={handleUpdateMode}/> 
         {/* updateMode est une arrow function construite dans App.js et passé au props dans le component list de App.js */}
         <BsTrash className='icon' onClick={removeTask}/>
       </div>
+
     </li>
   )
 };
