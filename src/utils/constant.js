@@ -1,0 +1,1 @@
+export const baseURL = "http://localhost:5000/api"; //it's the path for our API
